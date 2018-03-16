@@ -116,48 +116,153 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+ <style type="text/css">
+          
+      .container {
+      
+            text-align: center;
+            width: 400px;
+      }
+          
+      #homePageContainer {
+              
+            margin-top: 150px;
+          
+      }
+          
+          #containerLoggedInPage {
+              
+              margin-top: 60px;
+              
+          }
+          
+          
+      html { 
+          
+          background: url(background.jpg) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          
+          }
+          
+          body {
+              
+              background: none;
+              color: #FFF;
+              
+          }
+          
+          #logInForm {
+              
+              display:none;
+              
+          }
+          
+          .toggleForms {
+              
+              font-weight: bold;
+              
+          }
+          
+          #diary {
+              
+              width: 100%;
+              height: 100%;
+              
+          }
+          
+      </style>
     <title>Hello, world!</title>
   </head>
   <body>
-  <div class="container">
-   <h1>SECRET DIARY</h1>
-    <!-- SIGNUP FORM -->
-  <form method = "post">
-  	
-  <fieldset class="form-group">
-  <input class="form-control" type="email" name="email" placeholder="Your Email">
-  </fieldset>
-<fieldset class="form-group">
-  	<input class="form-control" type="password" name="password" placeholder="Your password">
-	</fieldset>
-  <fieldset class="form-group">	
-  <input class="form-control" type="checkbox" name = "stayLoggedIn" value="1">
- 
-  	<input class="form-control" type="hidden" name="signUp" value="1">
-  	</fieldset>
-	<fieldset class="form-group">
-	<input class="form-control" type="submit" name="submit" value ="SignUp">
-</fieldset>
-  </form>
-<!-- LOGIN FORM -->
-  <form method = "post">
-<fieldset class="form-group">  	
-  	<input class="form-control" type="email" name="email" placeholder="Your Email">
-  	</fieldset>
-	<fieldset class="form-group">
-	<input class="form-control" type="password" name="password" placeholder="Your password">
-  	 	</fieldset>
-	<fieldset class="form-group">
-	<input class="form-control" type="checkbox" name = "stayLoggedIn" value="1">
-  	 	</fieldset>
-	<fieldset class="form-group">
-	<input class="form-control" type="hidden" name="signUp" value="0">
- 	
-  	<input class="form-control" type="submit" name="submit" value ="Log In">
- 	</fieldset>
-  </form>
-</div>
+   <div class="container" id="homePageContainer">
+      
+    <h1>Secret Diary</h1>
+          
+          <p><strong>Store your thoughts permanently and securely.</strong></p>
+          
+       <div id="error"><?php echo $error; ?></div>
+
+<form method="post" id = "signUpForm">
+    
+    <p>Interested? Sign up now.</p>
+    
+    <fieldset class="form-group">
+
+        <input class="form-control" type="email" name="email" placeholder="Your Email">
+        
+    </fieldset>
+    
+    <fieldset class="form-group">
+    
+        <input class="form-control" type="password" name="password" placeholder="Password">
+        
+    </fieldset>
+    
+    <div class="checkbox">
+    
+        <label>
+    
+        <input type="checkbox" name="stayLoggedIn" value=1> Stay logged in
+            
+        </label>
+        
+    </div>
+    
+    <fieldset class="form-group">
+    
+        <input type="hidden" name="signUp" value="1">
+        
+        <input class="btn btn-success" type="submit" name="submit" value="Sign Up!">
+        
+    </fieldset>
+    
+    <p><a class="toggleForms">Log in</a></p>
+
+</form>
+
+<form method="post" id = "logInForm">
+    
+    <p>Log in using your username and password.</p>
+    
+    <fieldset class="form-group">
+
+        <input class="form-control" type="email" name="email" placeholder="Your Email">
+        
+    </fieldset>
+    
+    <fieldset class="form-group">
+    
+        <input class="form-control"type="password" name="password" placeholder="Password">
+        
+    </fieldset>
+    
+    <div class="checkbox">
+    
+        <label>
+    
+            <input type="checkbox" name="stayLoggedIn" value=1> Stay logged in
+            
+        </label>
+        
+    </div>
+        
+        <input type="hidden" name="signUp" value="0">
+    
+    <fieldset class="form-group">
+        
+        <input class="btn btn-success" type="submit" name="submit" value="Log In!">
+        
+    </fieldset>
+    
+    <p><a class="toggleForms">Sign up</a></p>
+
+</form>
+          
+      </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
